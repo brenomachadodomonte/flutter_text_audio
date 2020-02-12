@@ -56,8 +56,8 @@ class _AudioState extends State<Audio> {
                 ),
               ),
             ),
-            Flexible(
-              flex: 2,
+            Container(
+              alignment: Alignment.bottomCenter,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -79,7 +79,7 @@ class _AudioState extends State<Audio> {
                   ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),
