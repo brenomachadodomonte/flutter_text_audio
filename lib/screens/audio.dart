@@ -21,8 +21,6 @@ class _AudioState extends State<Audio> {
 
   AudioPlayer audioPlayer;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,22 +34,53 @@ class _AudioState extends State<Audio> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.settings, color: Colors.white),
-            onPressed: () {
-              setState(() {
-                fontSize += 2;
-              });
-            }
+            onPressed: (){}
           ),
         ],
       ),
       body: Container(
         padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Text(audio['en_text'], style: TextStyle(fontSize: fontSize),textAlign: TextAlign.justify,)
-            ],
-          ),
+        child: Column(
+          children: <Widget>[
+            Flexible(
+              flex: 4,
+              child: SingleChildScrollView(
+                child: Container(
+                  color: Colors.grey[200],
+                  padding: EdgeInsets.all(15),
+                  child: Column(
+                    children: <Widget>[
+                      Text(audio['en_text'], style: TextStyle(fontSize: fontSize))
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Flexible(
+              flex: 2,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  FlatButton(
+                    child: Text('A-', style: TextStyle(fontSize: 18),),
+                    onPressed: (){
+                      setState(() {
+                        fontSize -= 2;
+                      });
+                    },
+                  ),
+                  FlatButton(
+                    child: Text('A+', style: TextStyle(fontSize: 18),),
+                    onPressed: (){
+                      setState(() {
+                        fontSize += 2;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
