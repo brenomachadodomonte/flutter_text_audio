@@ -13,11 +13,16 @@ class Audio extends StatefulWidget {
 
 enum PlayerState { stopped, playing, paused }
 
+enum Language { pt, en }
+
 class _AudioState extends State<Audio> {
 
   final Map audio;
   double fontSize = 24.0;
+  bool showTextConfigs = true;
   _AudioState(this.audio);
+
+  Language language = Language.en;
 
   AudioPlayer audioPlayer;
 
@@ -34,50 +39,73 @@ class _AudioState extends State<Audio> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.settings, color: Colors.white),
-            onPressed: (){}
+            onPressed: (){
+              setState(() {
+                showTextConfigs = !showTextConfigs;
+              });
+            }
           ),
         ],
       ),
       body: Container(
-        padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            Flexible(
-              flex: 4,
+            Visibility(
+              visible: showTextConfigs,
+              child: Container(
+                color: Colors.blue[400],
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    FlatButton(
+                      child: Icon(Icons.visibility_off, color: Colors.white,),
+                      onPressed: (){
+                        setState(() {
+                          fontSize -= 2;
+                        });
+                      },
+                    ),
+                    FlatButton(
+                      child: Text(language == Language.en ? 'PT' : 'EN', style: TextStyle(fontSize: 14,color: Colors.white),),
+                      onPressed: (){
+                        setState(() {
+                          language = language == Language.en ? Language.pt : Language.en;
+                        });
+                      },
+                    ),
+                    FlatButton(
+                      child: Text('A-', style: TextStyle(fontSize: 14,color: Colors.white),),
+                      onPressed: (){
+                        setState(() {
+                          fontSize -= 2;
+                        });
+                      },
+                    ),
+                    FlatButton(
+                      child: Text('A+', style: TextStyle(fontSize: 14,color: Colors.white),),
+                      onPressed: (){
+                        setState(() {
+                          fontSize += 2;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
               child: SingleChildScrollView(
                 child: Container(
                   color: Colors.grey[200],
                   padding: EdgeInsets.all(15),
                   child: Column(
                     children: <Widget>[
-                      Text(audio['en_text'], style: TextStyle(fontSize: fontSize))
+                      Text(language == Language.en ? audio['en_text'] : audio['pt_text'], style: TextStyle(fontSize: fontSize))
                     ],
                   ),
                 ),
-              ),
-            ),
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  FlatButton(
-                    child: Text('A-', style: TextStyle(fontSize: 18),),
-                    onPressed: (){
-                      setState(() {
-                        fontSize -= 2;
-                      });
-                    },
-                  ),
-                  FlatButton(
-                    child: Text('A+', style: TextStyle(fontSize: 18),),
-                    onPressed: (){
-                      setState(() {
-                        fontSize += 2;
-                      });
-                    },
-                  ),
-                ],
               ),
             )
           ],
