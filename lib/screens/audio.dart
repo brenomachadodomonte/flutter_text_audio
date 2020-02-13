@@ -20,11 +20,16 @@ class _AudioState extends State<Audio> {
   final Map audio;
   double fontSize = 24.0;
   bool showTextConfigs = true;
+  bool showText = true;
   _AudioState(this.audio);
 
   Language language = Language.en;
 
   AudioPlayer audioPlayer;
+
+  //for tests
+  double value = 0.0;
+  int currentSpeaker = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +64,10 @@ class _AudioState extends State<Audio> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     FlatButton(
-                      child: Icon(Icons.visibility_off, color: Colors.white,),
+                      child: Icon(showText ? Icons.visibility_off : Icons.visibility, color: Colors.white,),
                       onPressed: (){
                         setState(() {
-                          fontSize -= 2;
+                          showText = !showText;
                         });
                       },
                     ),
@@ -95,19 +100,78 @@ class _AudioState extends State<Audio> {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 4,
               child: SingleChildScrollView(
                 child: Container(
-                  color: Colors.grey[200],
                   padding: EdgeInsets.all(15),
                   child: Column(
                     children: <Widget>[
-                      Text(language == Language.en ? audio['en_text'] : audio['pt_text'], style: TextStyle(fontSize: fontSize))
+                      Opacity(
+                        opacity: showText ? 1.0 : 0.0,
+                        child: Text(language == Language.en ? audio['en_text'] : audio['pt_text'], style: TextStyle(fontSize: fontSize)),
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
+              alignment: Alignment.bottomCenter,
+              color: Colors.grey[100],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  FloatingActionButton(
+                    backgroundColor: Colors.blue,
+                    elevation: 0,
+                    child: Icon(Icons.play_arrow, color: Colors.white,),
+                    onPressed: () {
+                      print('PLAY VIDEO');
+                      setState(() {
+                        value += 1.0;
+                      });
+                    },
+                  ),
+                  Slider(
+                    value: value,
+                    onChanged: (double value) => {},
+                    min: 0.0,
+                    max: 10.0
+                  ),
+                  DropdownButton(
+                    isExpanded: false,
+                    underline: Container(),
+                    value: currentSpeaker,
+                    items: [
+                      DropdownMenuItem<int>(
+                        value: 0,
+                        child: Text('JAKE', style: TextStyle(fontSize: 14, color: Colors.blue),),
+                      ),
+                      DropdownMenuItem<int>(
+                        value: 1,
+                        child: Text('JOHN', style: TextStyle(fontSize: 14, color: Colors.blue)),
+                      ),
+                      DropdownMenuItem<int>(
+                        value: 2,
+                        child: Text('MOIRA', style: TextStyle(fontSize: 14, color: Colors.blue)),
+                      ),
+                      DropdownMenuItem<int>(
+                        value: 3,
+                        child: Text('NATALIE', style: TextStyle(fontSize: 14, color: Colors.blue)),
+                      ),
+                    ],
+                    iconSize: 20,
+                    iconEnabledColor: Colors.blue,
+                    onChanged: (value) {
+                      setState(() {
+                        this.currentSpeaker = value;
+                      });
+                    },
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
