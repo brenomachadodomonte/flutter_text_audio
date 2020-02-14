@@ -28,7 +28,7 @@ class _AudioState extends State<Audio> {
   AudioPlayer audioPlayer;
 
   //for tests
-  double value = 0.0;
+  double value = 5.0;
   int currentSpeaker = 0;
 
   @override
@@ -118,57 +118,62 @@ class _AudioState extends State<Audio> {
             Container(
               padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
               alignment: Alignment.bottomCenter,
-              color: Colors.grey[100],
+              color: Colors.grey[200],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  FloatingActionButton(
-                    backgroundColor: Colors.blue,
-                    elevation: 0,
-                    child: Icon(Icons.play_arrow, color: Colors.white,),
-                    onPressed: () {
-                      print('PLAY VIDEO');
-                      setState(() {
-                        value += 1.0;
-                      });
-                    },
+                  Expanded(
+                    flex: 1,
+                    child: FloatingActionButton(
+                      backgroundColor: Colors.blue,
+                      elevation: 0,
+                      child: Icon(Icons.play_arrow, color: Colors.white,),
+                      onPressed: () {
+                        print('PLAY VIDEO');
+                      },
+                    ),
                   ),
-                  Slider(
-                    value: value,
-                    onChanged: (double value) => {},
-                    min: 0.0,
-                    max: 10.0
+                  Flexible(
+                    flex: 2,
+                    child: Slider(
+                      value: value,
+                      onChanged: (double value) => {},
+                      min: 0.0,
+                      max: 10.0
+                    ),
                   ),
-                  DropdownButton(
-                    isExpanded: false,
-                    underline: Container(),
-                    value: currentSpeaker,
-                    items: [
-                      DropdownMenuItem<int>(
-                        value: 0,
-                        child: Text('JAKE', style: TextStyle(fontSize: 14, color: Colors.blue),),
-                      ),
-                      DropdownMenuItem<int>(
-                        value: 1,
-                        child: Text('JOHN', style: TextStyle(fontSize: 14, color: Colors.blue)),
-                      ),
-                      DropdownMenuItem<int>(
-                        value: 2,
-                        child: Text('MOIRA', style: TextStyle(fontSize: 14, color: Colors.blue)),
-                      ),
-                      DropdownMenuItem<int>(
-                        value: 3,
-                        child: Text('NATALIE', style: TextStyle(fontSize: 14, color: Colors.blue)),
-                      ),
-                    ],
-                    iconSize: 20,
-                    iconEnabledColor: Colors.blue,
-                    onChanged: (value) {
-                      setState(() {
-                        this.currentSpeaker = value;
-                      });
-                    },
-                  )
+                  Expanded(
+                    flex: 1,
+                    child: DropdownButton(
+                      isExpanded: false,
+                      value: currentSpeaker,
+                      items: [
+                        DropdownMenuItem<int>(
+                          value: 0,
+                          child: Text('JAKE', style: TextStyle(fontSize: 14, color: Colors.blue),),
+                        ),
+                        DropdownMenuItem<int>(
+                          value: 1,
+                          child: Text('JOHN', style: TextStyle(fontSize: 14, color: Colors.blue)),
+                        ),
+                        DropdownMenuItem<int>(
+                          value: 2,
+                          child: Text('MOIRA', style: TextStyle(fontSize: 14, color: Colors.blue)),
+                        ),
+                        DropdownMenuItem<int>(
+                          value: 3,
+                          child: Text('NATALIE', style: TextStyle(fontSize: 14, color: Colors.blue)),
+                        ),
+                      ],
+                      //iconSize: 15,
+                      iconEnabledColor: Colors.blue,
+                      onChanged: (value) {
+                        setState(() {
+                          this.currentSpeaker = value;
+                        });
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
