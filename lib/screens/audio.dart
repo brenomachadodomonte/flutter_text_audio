@@ -29,7 +29,6 @@ class _AudioState extends State<Audio> {
   Language language = Language.en;
 
   String audioPath;
-  int currentSpeaker = 0;
 
   Duration _duration = new Duration();
   Duration _position = new Duration();
@@ -39,7 +38,9 @@ class _AudioState extends State<Audio> {
   @override
   void initState() {
     super.initState();
-    audioPath = audio['audios'][0]['path'];
+    setState(() {
+      audioPath = audio['audios'][0]['path'];
+    });
     initPlayer();
   }
 
@@ -160,7 +161,7 @@ class _AudioState extends State<Audio> {
                       elevation: 0,
                       child: Icon(Icons.play_arrow, color: Colors.white,),
                       onPressed: () {
-                        audioCache.play('audios/1/jake.mp3');
+                        audioCache.play(audioPath);
                       },
                     ),
                   ),
@@ -182,30 +183,13 @@ class _AudioState extends State<Audio> {
                     flex: 1,
                     child: DropdownButton(
                       isExpanded: true,
-                      value: currentSpeaker,
-                      items: [
-                        DropdownMenuItem<int>(
-                          value: 0,
-                          child: Text('JAKE', style: TextStyle(fontSize: 14, color: Colors.blue),),
-                        ),
-                        DropdownMenuItem<int>(
-                          value: 1,
-                          child: Text('JOHN', style: TextStyle(fontSize: 14, color: Colors.blue)),
-                        ),
-                        DropdownMenuItem<int>(
-                          value: 2,
-                          child: Text('MOIRA', style: TextStyle(fontSize: 14, color: Colors.blue)),
-                        ),
-                        DropdownMenuItem<int>(
-                          value: 3,
-                          child: Text('NATALIE', style: TextStyle(fontSize: 14, color: Colors.blue)),
-                        ),
-                      ],
+                      value: this.audioPath,
+                      items: mountSpeakers(),
                       //iconSize: 15,
                       iconEnabledColor: Colors.blue,
                       onChanged: (value) {
                         setState(() {
-                          this.currentSpeaker = value;
+                          this.audioPath = value;
                         });
                       },
                     ),
@@ -217,5 +201,17 @@ class _AudioState extends State<Audio> {
         ),
       ),
     );
+  }
+
+  List<DropdownMenuItem<String>> mountSpeakers() {
+    List<DropdownMenuItem<String>> itens = [];
+    for(Map audio in  audio['audios']){
+      itens.add(DropdownMenuItem<String>(
+        value: audio['path'],
+        child: Text(audio['name'].toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.blue)),
+      ));
+    }
+
+    return itens;
   }
 }
