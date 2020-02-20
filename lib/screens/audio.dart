@@ -1,5 +1,8 @@
-import 'package:audioplayer/audioplayer.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+
+typedef void OnError(Exception exception);
 
 class Audio extends StatefulWidget {
 
@@ -25,11 +28,39 @@ class _AudioState extends State<Audio> {
 
   Language language = Language.en;
 
-  AudioPlayer audioPlayer;
-
-  //for tests
-  double value = 5.0;
+  String audioPath;
   int currentSpeaker = 0;
+
+  Duration _duration = new Duration();
+  Duration _position = new Duration();
+  AudioPlayer advancedPlayer;
+  AudioCache audioCache;
+
+  @override
+  void initState() {
+    super.initState();
+    audioPath = audio['audios'][0]['path'];
+    initPlayer();
+  }
+
+  void initPlayer(){
+    advancedPlayer = new AudioPlayer();
+    audioCache = new AudioCache(fixedPlayer: advancedPlayer);
+
+    advancedPlayer.durationHandler = (d) => setState(() {
+      _duration = d;
+    });
+
+    advancedPlayer.positionHandler = (p) => setState(() {
+      _position = p;
+    });
+  }
+
+  void seekToSecond(int second){
+    Duration newDuration = Duration(seconds: second);
+
+    advancedPlayer.seek(newDuration);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -129,23 +160,28 @@ class _AudioState extends State<Audio> {
                       elevation: 0,
                       child: Icon(Icons.play_arrow, color: Colors.white,),
                       onPressed: () {
-                        print('PLAY VIDEO');
+                        audioCache.play('audios/1/jake.mp3');
                       },
                     ),
                   ),
                   Flexible(
                     flex: 2,
                     child: Slider(
-                      value: value,
-                      onChanged: (double value) => {},
+                      value: _position.inSeconds.toDouble(),
+                      onChanged: (double value) {
+                        setState(() {
+                          seekToSecond(value.toInt());
+                          value = value;
+                        });
+                      },
                       min: 0.0,
-                      max: 10.0
+                      max: _duration.inSeconds.toDouble(),
                     ),
                   ),
                   Expanded(
                     flex: 1,
                     child: DropdownButton(
-                      isExpanded: false,
+                      isExpanded: true,
                       value: currentSpeaker,
                       items: [
                         DropdownMenuItem<int>(
