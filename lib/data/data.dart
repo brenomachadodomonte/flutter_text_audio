@@ -14,4 +14,17 @@ List dataAudios = [
       {'name': 'Natalie','path': 'audios/1/natalie.mp3'},
     ]
   },
+  {
+    'id':1,
+    'title': 'Jack Hannaford',
+    'subtitle': 'Parte 02',
+    'en_text': 'Jack looked up at the pale blue sky, and he said, “I came from Heaven.” “My goodness!”, she said. “Did you see my husband there?” (The farmer’s wife was talking about her first husband, the man who had died). “Oh yes, I got to know him well when I was staying in Heaven,” said Jack. “And how is he doing?”, asked the woman. “He is fine,” replied the old soldier. “He works hard sewing and mending clothes for the saints and angels, but even so, he sometimes doesn’t have enough money to eat.” “And did he send me a message?”, she asked. “Yes, he did! That is why I’ve come here. He asked me to bring back some money for him, so that he can spend his days in paradise more comfortably.” On hearing this, the poor woman’s heart almost broke with pity.',
+    'pt_text': 'Jack olhou para o céu azul claro, e ele disse, “Eu vim do céu”. “Meu Deus!”, ela disse. “Você viu meu marido lá?” (a esposa do fazendeiro estava falando sobre o primeiro marido dela, o homem que tinha morrido). “Ah sim, eu conheci ele bem quando eu estava passando um tempo no céu”, disse Jack. “Ele como ele está?”, perguntou a mulher. “Ele está bem”, respondeu o velho soldado. “Ele trabalha duro costurando e remendando roupas para as santidades e os anjos, mas mesmo assim, ele às vezes não tem dinheiro o suficiente para comer”. “E ele me mandou uma mensagem?”, ela perguntou. “Sim, ele mandou! É por causa disso que eu vim aqui. Ele me pediu para trazer de volta um pouco de dinheiro para ele, para que ele possa passar seus dias no paraíso mais confortavelmente”. Ao ouvir isso, o coração da pobre mulher quase quebrou de piedade.',
+    'audios': [
+      {'name': 'Jake','path': 'audios/2/jake.mp3'},
+      {'name': 'John','path': 'audios/2/john.mp3'},
+      {'name': 'Moira','path': 'audios/2/moira.mp3'},
+      {'name': 'Natalie','path': 'audios/2/natalie.mp3'},
+    ]
+  },
 ];

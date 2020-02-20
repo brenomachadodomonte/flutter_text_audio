@@ -57,6 +57,10 @@ flutter:
     - assets/audios/1/john.mp3
     - assets/audios/1/moira.mp3
     - assets/audios/1/natalie.mp3
+    - assets/audios/2/jake.mp3
+    - assets/audios/2/john.mp3
+    - assets/audios/2/moira.mp3
+    - assets/audios/2/natalie.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
