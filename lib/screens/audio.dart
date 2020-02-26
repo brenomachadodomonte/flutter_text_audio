@@ -148,7 +148,7 @@ class _AudioState extends State<Audio> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 30),
               alignment: Alignment.bottomCenter,
               color: Colors.grey[200],
               child: Row(
@@ -166,7 +166,7 @@ class _AudioState extends State<Audio> {
                     ),
                   ),
                   Flexible(
-                    flex: 2,
+                    flex: 5,
                     child: Slider(
                       value: _position.inSeconds.toDouble(),
                       onChanged: (double value) {
@@ -180,11 +180,12 @@ class _AudioState extends State<Audio> {
                     ),
                   ),
                   Expanded(
-                    flex: 1,
+                    flex: 2,
                     child: DropdownButton(
                       isExpanded: true,
                       value: this.audioPath,
                       items: mountSpeakers(),
+                      underline: Container(),
                       //iconSize: 15,
                       iconEnabledColor: Colors.blue,
                       onChanged: (value) {
