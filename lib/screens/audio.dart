@@ -24,6 +24,7 @@ class _AudioState extends State<Audio> {
   double fontSize = 24.0;
   bool showTextConfigs = true;
   bool showText = true;
+  bool autoReplay = false;
   _AudioState(this.audio);
 
   Language language = Language.en;
@@ -34,12 +35,14 @@ class _AudioState extends State<Audio> {
   Duration _position = new Duration();
   AudioPlayer advancedPlayer;
   AudioCache audioCache;
+  PlayerState state;
 
   @override
   void initState() {
     super.initState();
     setState(() {
       audioPath = audio['audios'][0]['path'];
+      state = PlayerState.stopped;
     });
     initPlayer();
   }
@@ -55,7 +58,44 @@ class _AudioState extends State<Audio> {
     advancedPlayer.positionHandler = (p) => setState(() {
       _position = p;
     });
+
+    advancedPlayer.completionHandler = () => setState((){
+      if(autoReplay){
+        _play();
+      } else {
+        state = PlayerState.stopped;
+      }
+    });
   }
+
+  _play() {
+    setState(() {
+      audioCache.play(audioPath);
+      state = PlayerState.stopped;
+    });
+  }
+
+  _stop() {
+    setState(() {
+      advancedPlayer.stop();
+      state = PlayerState.stopped;
+    });
+  }
+
+  _pause(){
+    setState(() {
+      advancedPlayer.pause();
+      state = PlayerState.paused;
+    });
+  }
+
+  _resume(){
+    setState(() {
+      advancedPlayer.resume();
+      state = PlayerState.playing;
+    });
+  }
+
 
   void seekToSecond(int second){
     Duration newDuration = Duration(seconds: second);
@@ -161,7 +201,11 @@ class _AudioState extends State<Audio> {
                       elevation: 0,
                       child: Icon(Icons.play_arrow, color: Colors.white,),
                       onPressed: () {
-                        audioCache.play(audioPath);
+                        switch(state){
+                          case PlayerState.stopped: _play(); break;
+                          case PlayerState.paused: _resume(); break;
+                          case PlayerState.playing: _pause(); break;
+                        }
                       },
                     ),
                   ),
