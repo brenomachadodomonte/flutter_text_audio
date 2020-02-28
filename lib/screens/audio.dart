@@ -31,8 +31,8 @@ class _AudioState extends State<Audio> {
 
   String audioPath;
 
-  Duration _duration = new Duration();
-  Duration _position = new Duration();
+  Duration _duration = Duration();
+  Duration _position = Duration();
   AudioPlayer advancedPlayer;
   AudioCache audioCache;
   PlayerState state;
@@ -48,8 +48,8 @@ class _AudioState extends State<Audio> {
   }
 
   void initPlayer(){
-    advancedPlayer = new AudioPlayer();
-    audioCache = new AudioCache(fixedPlayer: advancedPlayer);
+    advancedPlayer = AudioPlayer();
+    audioCache = AudioCache(fixedPlayer: advancedPlayer);
 
     advancedPlayer.durationHandler = (d) => setState(() {
       _duration = d;
@@ -71,7 +71,7 @@ class _AudioState extends State<Audio> {
   _play() {
     setState(() {
       audioCache.play(audioPath);
-      state = PlayerState.stopped;
+      state = PlayerState.playing;
     });
   }
 
@@ -79,6 +79,7 @@ class _AudioState extends State<Audio> {
     setState(() {
       advancedPlayer.stop();
       state = PlayerState.stopped;
+      _position = Duration();
     });
   }
 
@@ -188,56 +189,78 @@ class _AudioState extends State<Audio> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 30),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 15),
               alignment: Alignment.bottomCenter,
               color: Colors.grey[200],
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              child: Column(
                 children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: FloatingActionButton(
-                      backgroundColor: Colors.blue,
-                      elevation: 0,
-                      child: Icon(Icons.play_arrow, color: Colors.white,),
-                      onPressed: () {
-                        switch(state){
-                          case PlayerState.stopped: _play(); break;
-                          case PlayerState.paused: _resume(); break;
-                          case PlayerState.playing: _pause(); break;
-                        }
-                      },
-                    ),
-                  ),
-                  Flexible(
-                    flex: 5,
-                    child: Slider(
-                      value: _position.inSeconds.toDouble(),
-                      onChanged: (double value) {
-                        setState(() {
-                          seekToSecond(value.toInt());
-                          value = value;
-                        });
-                      },
-                      min: 0.0,
-                      max: _duration.inSeconds.toDouble(),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: DropdownButton(
-                      isExpanded: true,
-                      value: this.audioPath,
-                      items: mountSpeakers(),
-                      underline: Container(),
-                      //iconSize: 15,
-                      iconEnabledColor: Colors.blue,
-                      onChanged: (value) {
-                        setState(() {
-                          this.audioPath = value;
-                        });
-                      },
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: InkWell(
+                          child: Icon(Icons.stop, color: Colors.blue, size: 30,),
+                          onTap: _stop,
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: FloatingActionButton(
+                          backgroundColor: Colors.blue,
+                          elevation: 0,
+                          child: Icon(state != PlayerState.playing ? Icons.play_arrow : Icons.pause, color: Colors.white,),
+                          onPressed: () {
+                            switch(state){
+                              case PlayerState.stopped: _play(); break;
+                              case PlayerState.paused: _resume(); break;
+                              case PlayerState.playing: _pause(); break;
+                            }
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Slider(
+                          value: _position.inSeconds.toDouble(),
+                          onChanged: (double value) {
+                            setState(() {
+                              seekToSecond(value.toInt());
+                              value = value;
+                            });
+                          },
+                          min: 0.0,
+                          max: _duration.inSeconds.toDouble(),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: InkWell(
+                          child: Icon(Icons.loop, color: autoReplay ? Colors.blue : Colors.grey,),
+                          onTap: (){
+                            setState(() {
+                              autoReplay = !autoReplay;
+                            });
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: DropdownButton(
+                          isExpanded: true,
+                          value: this.audioPath,
+                          items: mountSpeakers(),
+                          underline: Container(),
+                          //iconSize: 15,
+                          iconEnabledColor: Colors.blue,
+                          onChanged: (value) {
+                            setState(() {
+                              this.audioPath = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -250,7 +273,7 @@ class _AudioState extends State<Audio> {
 
   List<DropdownMenuItem<String>> mountSpeakers() {
     List<DropdownMenuItem<String>> itens = [];
-    for(Map audio in  audio['audios']){
+    for(Map audio in audio['audios']){
       itens.add(DropdownMenuItem<String>(
         value: audio['path'],
         child: Text(audio['name'].toUpperCase(), style: TextStyle(fontSize: 14, color: Colors.blue)),
