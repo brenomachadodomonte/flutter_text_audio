@@ -21,7 +21,7 @@ enum Language { pt, en }
 class _AudioState extends State<Audio> {
 
   final Map audio;
-  double fontSize = 24.0;
+  double fontSize = 22.0;
   bool showTextConfigs = true;
   bool showText = true;
   bool autoReplay = false;
@@ -184,9 +184,18 @@ class _AudioState extends State<Audio> {
                   padding: EdgeInsets.all(15),
                   child: Column(
                     children: <Widget>[
-                      Opacity(
-                        opacity: showText ? 1.0 : 0.0,
+                      Visibility(
+                        visible: showText,
                         child: Text(language == Language.en ? audio['en_text'] : audio['pt_text'], style: TextStyle(fontSize: fontSize)),
+                      ),
+                      Visibility(
+                        visible: !showText,
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 2,
+                          child: Center(
+                            child: Icon(Icons.visibility_off, size: 120,color: Colors.grey[300],),
+                          ),
+                        ),
                       ),
                     ],
                   ),
