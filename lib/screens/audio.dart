@@ -111,7 +111,12 @@ class _AudioState extends State<Audio> {
         title: Text("${audio['title']} - ${audio['subtitle']}"),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context)
+          onPressed: () {
+            _stop();
+            advancedPlayer = null;
+            audioCache = null;
+            Navigator.pop(context);
+          }
         ),
         centerTitle: true,
         actions: <Widget>[
@@ -221,16 +226,22 @@ class _AudioState extends State<Audio> {
                       ),
                       Expanded(
                         flex: 3,
-                        child: Slider(
-                          value: _position.inSeconds.toDouble(),
-                          onChanged: (double value) {
-                            setState(() {
-                              seekToSecond(value.toInt());
-                              value = value;
-                            });
-                          },
-                          min: 0.0,
-                          max: _duration.inSeconds.toDouble(),
+                        child: SliderTheme(
+                          data: SliderTheme.of(context).copyWith(
+                            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 6.0),
+                            overlayShape: RoundSliderOverlayShape(overlayRadius: 10.0),
+                          ),
+                          child: Slider(
+                            value: _position.inSeconds.toDouble(),
+                            onChanged: (double value) {
+                              setState(() {
+                                seekToSecond(value.toInt());
+                                value = value;
+                              });
+                            },
+                            min: 0.0,
+                            max: _duration.inSeconds.toDouble(),
+                          ),
                         ),
                       ),
                       Expanded(
