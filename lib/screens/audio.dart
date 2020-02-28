@@ -194,7 +194,7 @@ class _AudioState extends State<Audio> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 15),
+              padding: EdgeInsets.fromLTRB(5, 10, 5, 15),
               alignment: Alignment.bottomCenter,
               color: Colors.grey[200],
               child: Column(
