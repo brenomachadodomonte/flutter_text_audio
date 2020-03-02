@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: const Duration(milliseconds: 1500), vsync: this);
+        duration: const Duration(milliseconds: 2000), vsync: this);
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
     controller.forward();
 
