@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
           key: _scaffoldKey2,
           body: Container(
             child: Center(
-              child: Text('TODO'),
+              child: Text('Coming soon!'),
             ),
           ),
           drawer: HomeDrawer(_pageController),
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
           key: _scaffoldKey4,
           body: Container(
             child: Center(
-              child: Text('TODO'),
+              child: Text('Coming soon!'),
             ),
           ),
           drawer: HomeDrawer(_pageController),
@@ -56,7 +56,11 @@ class _HomeState extends State<Home> {
         ),
         Scaffold(
           key: _scaffoldKey5,
-          body: Container(),
+          body: Container(
+            child: Center(
+              child: Text('Coming soon!'),
+            ),
+          ),
           drawer: HomeDrawer(_pageController),
           appBar: _appBar("About", _scaffoldKey4),
         ),
