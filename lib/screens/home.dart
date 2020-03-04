@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bm2_text_audio_app/tabs/texts_audios.dart';
+import 'package:bm2_text_audio_app/tabs/sentences.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -39,29 +40,9 @@ class _HomeState extends State<Home> {
         ),
         Scaffold(
           key: _scaffoldKey3,
-          body: Container(
-            child: Center(
-              child: Text('TODO'),
-            ),
-          ),
+          body: Sentences(),
           drawer: HomeDrawer(_pageController),
           appBar: _appBar("Sentences", _scaffoldKey3),
-        ),
-        Scaffold(
-          key: _scaffoldKey4,
-          body: Container(),
-          drawer: HomeDrawer(_pageController),
-          appBar: _appBar("Pronunciation", _scaffoldKey4),
-        ),
-        Scaffold(
-          key: _scaffoldKey4,
-          body: Container(
-            child: Center(
-              child: Text('TODO'),
-            ),
-          ),
-          drawer: HomeDrawer(_pageController),
-          appBar: _appBar("Pronunciation", _scaffoldKey4),
         ),
         Scaffold(
           key: _scaffoldKey4,
