@@ -54,3 +54,43 @@ List dataAudios = [
     ]
   },
 ];
+
+List dataSentences = [
+  {
+    'id': 1,
+    'sentence': 'He was detained | by the US customs.',
+    'pronunciation': '/hi wəz dɪˈteɪnd | baɪ ðə juː es ˈkʌstəmz/',
+    'audio': 'sentences/1/isp-01.mp3'
+  },
+  {
+    'id': 2,
+    'sentence': 'Which of them | is your brother?',
+    'pronunciation': '/wɪtʃ əv ðəm | ɪz jʊr ˈbrʌðər/',
+    'audio': 'sentences/isp-02.mp3'
+  },
+  {
+    'id': 3,
+    'sentence': 'You have to think for yourself.',
+    'pronunciation': '/juː hæf tə θɪŋk fər jʊrˈself/',
+    'audio': 'sentences/isp-03.mp3'
+  },
+
+  {
+    'id': 4,
+    'sentence': 'Did you know | that he was lying?',
+    'pronunciation': '/dɪd juː noʊ | ðæt hiː wəz ˈlaɪɪŋ/',
+    'audio': 'sentences/isp-04.mp3'
+  },
+  {
+    'id': 5,
+    'sentence': 'How to deal with people | who try to manipulate you?',
+    'pronunciation': '/haʊ tuː diːl wɪθ ˈpiːpl | huː traɪ tə məˈnɪpjuleɪt juː/',
+    'audio': 'sentences/isp-05.mp3'
+  },
+  {
+    'id': 6,
+    'sentence': 'So that | you can use it again.',
+    'pronunciation': '/soʊ ðæt | ju ken juːz ɪt əˈɡen/',
+    'audio': 'sentences/isp-06.mp3'
+  },
+];

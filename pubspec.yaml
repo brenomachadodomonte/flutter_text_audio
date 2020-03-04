@@ -69,6 +69,12 @@ flutter:
     - assets/audios/4/john.mp3
     - assets/audios/4/moira.mp3
     - assets/audios/4/natalie.mp3
+    - assets/sentences/isp-01.mp3
+    - assets/sentences/isp-02.mp3
+    - assets/sentences/isp-03.mp3
+    - assets/sentences/isp-04.mp3
+    - assets/sentences/isp-05.mp3
+    - assets/sentences/isp-06.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
