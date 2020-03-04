@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           drawer: HomeDrawer(_pageController),
-          appBar: _appBar("About", _scaffoldKey4),
+          appBar: _appBar("About", _scaffoldKey5),
         ),
       ],
     );
