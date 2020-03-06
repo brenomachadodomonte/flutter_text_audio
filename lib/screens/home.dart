@@ -15,6 +15,7 @@ class _HomeState extends State<Home> {
   final GlobalKey<ScaffoldState> _scaffoldKey3 = new GlobalKey<ScaffoldState>();
   final GlobalKey<ScaffoldState> _scaffoldKey4 = new GlobalKey<ScaffoldState>();
   final GlobalKey<ScaffoldState> _scaffoldKey5 = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey6 = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -45,16 +46,6 @@ class _HomeState extends State<Home> {
           appBar: _appBar("Sentences", _scaffoldKey3),
         ),
         Scaffold(
-          key: _scaffoldKey4,
-          body: Container(
-            child: Center(
-              child: Text('Coming soon!'),
-            ),
-          ),
-          drawer: HomeDrawer(_pageController),
-          appBar: _appBar("Pronunciation", _scaffoldKey4),
-        ),
-        Scaffold(
           key: _scaffoldKey5,
           body: Container(
             child: Center(
@@ -62,7 +53,33 @@ class _HomeState extends State<Home> {
             ),
           ),
           drawer: HomeDrawer(_pageController),
-          appBar: _appBar("About", _scaffoldKey5),
+          appBar: _appBar("Pronunciation", _scaffoldKey5),
+        ),
+        Scaffold(
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {
+              print('create alerts');
+            },
+          ),
+          key: _scaffoldKey4,
+          body: Container(
+            child: Center(
+              child: Text('Coming soon!'),
+            ),
+          ),
+          drawer: HomeDrawer(_pageController),
+          appBar: _appBar("Alerts", _scaffoldKey4),
+        ),
+        Scaffold(
+          key: _scaffoldKey6,
+          body: Container(
+            child: Center(
+              child: Text('Coming soon!'),
+            ),
+          ),
+          drawer: HomeDrawer(_pageController),
+          appBar: _appBar("About", _scaffoldKey6),
         ),
       ],
     );
@@ -138,7 +155,8 @@ class HomeDrawer extends StatelessWidget {
               DrawerTile(Icons.view_list, "Sentences", pageController, 2),
               DrawerTile(Icons.record_voice_over, "Pronunciation", pageController, 3),
               Divider(),
-              DrawerTile(Icons.info_outline, "About", pageController, 4),
+              DrawerTile(Icons.notifications_none, "Alerts", pageController, 4),
+              DrawerTile(Icons.info_outline, "About", pageController, 5),
               Material(
                 color: Colors.transparent,
                 child: InkWell(

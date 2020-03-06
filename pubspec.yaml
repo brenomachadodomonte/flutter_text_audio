@@ -69,12 +69,42 @@ flutter:
     - assets/audios/4/john.mp3
     - assets/audios/4/moira.mp3
     - assets/audios/4/natalie.mp3
+    - assets/audios/5/jake.mp3
+    - assets/audios/5/john.mp3
+    - assets/audios/5/moira.mp3
+    - assets/audios/5/natalie.mp3
+    - assets/audios/6/jake.mp3
+    - assets/audios/6/john.mp3
+    - assets/audios/6/moira.mp3
+    - assets/audios/6/natalie.mp3
+    - assets/audios/7/jake.mp3
+    - assets/audios/7/john.mp3
+    - assets/audios/7/moira.mp3
+    - assets/audios/7/natalie.mp3
+    - assets/audios/8/jake.mp3
+    - assets/audios/8/john.mp3
+    - assets/audios/8/moira.mp3
+    - assets/audios/8/natalie.mp3
+    - assets/audios/9/jake.mp3
+    - assets/audios/9/john.mp3
+    - assets/audios/9/moira.mp3
+    - assets/audios/9/natalie.mp3
+    - assets/audios/10/jake.mp3
+    - assets/audios/10/john.mp3
+    - assets/audios/10/moira.mp3
+    - assets/audios/10/natalie.mp3
     - assets/sentences/isp-01.mp3
     - assets/sentences/isp-02.mp3
     - assets/sentences/isp-03.mp3
     - assets/sentences/isp-04.mp3
     - assets/sentences/isp-05.mp3
     - assets/sentences/isp-06.mp3
+    - assets/sentences/isp-07.mp3
+    - assets/sentences/isp-08.mp3
+    - assets/sentences/isp-09.mp3
+    - assets/sentences/isp-10.mp3
+    - assets/sentences/isp-11.mp3
+    - assets/sentences/isp-12.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
