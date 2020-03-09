@@ -139,7 +139,7 @@ List dataSentences = [
     'id': 1,
     'sentence': 'He was detained | by the US customs.',
     'pronunciation': '/hi wəz dɪˈteɪnd | baɪ ðə juː es ˈkʌstəmz/',
-    'audio': 'sentences/1/isp-01.mp3'
+    'audio': 'sentences/isp-01.mp3'
   },
   {
     'id': 2,
