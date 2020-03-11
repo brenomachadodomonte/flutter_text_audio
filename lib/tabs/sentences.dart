@@ -31,7 +31,7 @@ class _SentencesState extends State<Sentences> {
 
   @override
   void dispose() {
-    _stop('');
+    advancedPlayer.stop();
     advancedPlayer = null;
     audioCache = null;
     super.dispose();
