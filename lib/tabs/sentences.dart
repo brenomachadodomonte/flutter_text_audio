@@ -17,10 +17,15 @@ class _SentencesState extends State<Sentences> {
   AudioCache audioCache;
   PlayerState state;
   String audio;
+  List sentences = dataSentences;
 
   @override
   void initState() {
     super.initState();
+    sentences = sentences.map((sentence){
+      sentence['playing'] = false;
+      return sentence;
+    }).toList();
     initPlayer();
   }
 
@@ -44,11 +49,18 @@ class _SentencesState extends State<Sentences> {
   }
 
   _play(String audioPath) {
-    print('play');
     setState(() {
       if(state == PlayerState.playing){
         advancedPlayer.stop();
       }
+      sentences = sentences.map((sentence){
+        if(audioPath == sentence['audio']){
+          sentence['playing'] = true;
+        } else {
+          sentence['playing'] = false;
+        }
+        return sentence;
+      }).toList();
       audio = audioPath;
       audioCache.play(audio);
       state = PlayerState.playing;
@@ -57,6 +69,10 @@ class _SentencesState extends State<Sentences> {
 
   _stop(String audioPath) {
     setState(() {
+      sentences = sentences.map((sentence){
+        sentence['playing'] = false;
+        return sentence;
+      }).toList();
       audio = null;
       advancedPlayer.stop();
       state = PlayerState.stopped;
@@ -69,7 +85,7 @@ class _SentencesState extends State<Sentences> {
       child: ListView(
         children: ListTile.divideTiles(
             context: context,
-            tiles: dataSentences.map((sentence) => _getTile(sentence)).toList()
+            tiles: sentences.map((sentence) => _getTile(sentence)).toList()
         ).toList(),
       ),
     );
@@ -95,7 +111,6 @@ class MyTile extends StatefulWidget {
 
 class _MyTaleState extends State<MyTile> {
 
-  bool playing = false;
   final Map sentence;
 
   _MyTaleState(this.sentence);
@@ -106,18 +121,17 @@ class _MyTaleState extends State<MyTile> {
       leading: IconButton(
         onPressed: (){
           setState(() {
-            if(playing){
+            if(sentence['playing']){
               widget.stopAction(sentence['audio']);
             } else {
               widget.playAction(sentence['audio']);
             }
-            playing = !playing;
           });
         },
-        icon: Icon(playing ? Icons.stop : Icons.play_arrow, color: playing ? Colors.blue[300] : Colors.black54),
+        icon: Icon(sentence['playing'] ? Icons.stop : Icons.play_arrow, color: sentence['playing'] ? Colors.blue[300] : Colors.black54),
       ),
-      title: Text(sentence['sentence'], style: TextStyle(color: playing ? Colors.blue : Colors.black),),
-      subtitle: Text(sentence['pronunciation'], style: TextStyle(color: playing ? Colors.blue[300] : Colors.black54),),
+      title: Text(sentence['sentence'], style: TextStyle(color: sentence['playing'] ? Colors.blue : Colors.black),),
+      subtitle: Text(sentence['pronunciation'], style: TextStyle(color: sentence['playing'] ? Colors.blue[300] : Colors.black54),),
     );
   }
 }
