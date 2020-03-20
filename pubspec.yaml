@@ -105,6 +105,14 @@ flutter:
     - assets/sentences/isp-10.mp3
     - assets/sentences/isp-11.mp3
     - assets/sentences/isp-12.mp3
+    - assets/sentences/isp-13.mp3
+    - assets/sentences/isp-14.mp3
+    - assets/sentences/isp-15.mp3
+    - assets/sentences/isp-16.mp3
+    - assets/sentences/isp-17.mp3
+    - assets/sentences/isp-18.mp3
+    - assets/sentences/isp-19.mp3
+    - assets/sentences/isp-20.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -153,7 +153,6 @@ List dataSentences = [
     'pronunciation': '/juː hæf tə θɪŋk fər jʊrˈself/',
     'audio': 'sentences/isp-03.mp3'
   },
-
   {
     'id': 4,
     'sentence': 'Did you know | that he was lying?',
@@ -207,5 +206,53 @@ List dataSentences = [
     'sentence': 'I could not keep the promise.',
     'pronunciation': '/aɪ kʊd nɑːt kiːp ðə prɑːmɪs/',
     'audio': 'sentences/isp-12.mp3'
+  },
+  {
+    'id': 13,
+    'sentence': 'They’re going to do | everything they can.',
+    'pronunciation': '/ðer ɡoʊɪŋ tu du | evriθɪŋ ðeɪ kæn/',
+    'audio': 'sentences/isp-13.mp3'
+  },
+  {
+    'id': 14,
+    'sentence': 'They’re not going to solve the problem.',
+    'pronunciation': '/ðer nɑːt ɡoʊɪŋ tə sɑːlv ðə prɑːbləm/',
+    'audio': 'sentences/isp-14.mp3'
+  },
+  {
+    'id': 15,
+    'sentence': 'I don’t want to talk to you anymore.',
+    'pronunciation': '/aɪ doʊn wɑːn tu tɔːk tu juː eniˈmɔːr/',
+    'audio': 'sentences/isp-15.mp3'
+  },
+  {
+    'id': 16,
+    'sentence': 'I don’t know | how this happened.',
+    'pronunciation': '/aɪ doʊn noʊ | haʊ ðɪs hæpənd/',
+    'audio': 'sentences/isp-16.mp3'
+  },
+  {
+    'id': 17,
+    'sentence': 'Let me just finish | what I’m doing.',
+    'pronunciation': '/let miː dʒʌst fɪnɪʃ | wɑt aɪm duːɪŋ/',
+    'audio': 'sentences/isp-17.mp3'
+  },
+  {
+    'id': 18,
+    'sentence': 'I’m sorry | I’ve forgotten your name. | Can you remind me?',
+    'pronunciation': '/aɪm sɑːri | aɪv fərˈɡɑːtn jʊr neɪm. | ken juː rɪˈmaɪnd miː/',
+    'audio': 'sentences/isp-18.mp3'
+  },
+  {
+    'id': 19,
+    'sentence': 'You didn’t notice that I got my hair cut.',
+    'pronunciation': '/juː dɪdnt noʊtɪs ðæt aɪ ɡɑːt maɪ her kʌt/',
+    'audio': 'sentences/isp-19.mp3'
+  },
+  {
+    'id': 20,
+    'sentence': 'We could have done more.',
+    'pronunciation': '/wi kʊdæv dʌn mɔːr/',
+    'audio': 'sentences/isp-20.mp3'
   },
 ];
