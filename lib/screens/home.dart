@@ -1,3 +1,4 @@
+import 'package:bm2_text_audio_app/tabs/pronunciations.dart';
 import 'package:flutter/material.dart';
 import 'package:bm2_text_audio_app/tabs/texts_audios.dart';
 import 'package:bm2_text_audio_app/tabs/sentences.dart';
@@ -47,11 +48,7 @@ class _HomeState extends State<Home> {
         ),
         Scaffold(
           key: _scaffoldKey5,
-          body: Container(
-            child: Center(
-              child: Text('Coming soon!'),
-            ),
-          ),
+          body: Pronunciations(),
           drawer: HomeDrawer(_pageController),
           appBar: _appBar("Pronunciation", _scaffoldKey5),
         ),
