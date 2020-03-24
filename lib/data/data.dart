@@ -256,3 +256,164 @@ List dataSentences = [
     'audio': 'sentences/isp-20.mp3'
   },
 ];
+
+List dataPronunciations = [
+  {
+    'id': 1,
+    'title': 'TH sound as in THINK',
+    'content': [
+      {
+        'title': 'Initial TH',
+        'data': [
+          'through /θruː/',
+          'think /θɪŋk/',
+          'thanks /θæŋks/',
+          'theory /ˈθiːəri/',
+          'three /θriː/',
+          'thing /θɪŋ/',
+          'thought /θɔːt/ ',
+          'throughout /θruːˈaʊt/'
+        ],
+      },
+      {
+        'title': 'Medial TH',
+        'data': [
+          'something /ˈsʌmθɪŋ/',
+          'method /ˈmeθəd/',
+          'everything /ˈevriθɪŋ/',
+          'nothing /ˈnʌθɪŋ/',
+          'healthy /ˈhelθi/'
+        ]
+      },
+      {
+        'title': 'Final TH',
+        'data': [
+          'with /wɪθ/',
+          'health /helθ/',
+          'both /boʊθ/',
+          'worth /wɜːrθ/',
+          'earth /ɜːrθ/',
+          'month /mʌnθ/',
+          'truth /truːθ/',
+          'birth /bɜːrθ/',
+          'growth /ɡroʊθ/',
+          'math /mæθ/',
+          'north /nɔːrθ/',
+          'death /deθ/'
+        ]
+      }
+    ],
+    'audios': [
+      {'name': 'Male','path': 'pronunciations/m1.mp3'},
+      {'name': 'Female','path': 'pronunciations/f1.mp3'},
+    ]
+  },
+  {
+    'id': 2,
+    'title': '/ə/ and /ʌ/ sounds',
+    'content': [
+      {
+        'title': 'Words with the /ə/ sound',
+        'data': [
+          'a /ə/',
+          'the /ðə/',
+          'of /əv/',
+          'us /əs/',
+          'was /wəz/',
+          'tonight /təˈnaɪt/',
+          'tomorrow /təˈmɑːroʊ/',
+          'supply /səˈplaɪ/',
+          'away /əˈweɪ/',
+          'today /təˈdeɪ/',
+          'ability /əˈbɪləti/',
+          'allow /əˈlaʊ/',
+          'again /əˈɡeɪn/ ',
+          'computer /kəmˈpjuːtər/ ',
+          'data /ˈdeɪtə/',
+          'about /əˈbaʊt/ ',
+          'visa /ˈviːzə/ ',
+          'father /ˈfɑːðər/',
+        ],
+      },
+      {
+        'title': 'Words using the /ʌ/ sound',
+        'data': [
+          'but /bʌt/',
+          'some /sʌm/',
+          'one /wʌn/',
+          'other /ˈʌðər/',
+          'up /ʌp/',
+          'such /sʌtʃ/',
+          'just /dʒʌst/',
+          'money /ˈmʌni/',
+          'much /mʌtʃ/',
+          'government /ˈɡʌvərnmənt/',
+          'another /əˈnʌðər/',
+          'study /ˈstʌdi/',
+          'must/mʌst/',
+          'does /dʌz/',
+          'become /bɪˈkʌm/',
+          'number /ˈnʌmbər/',
+          'public /ˈpʌblɪk/',
+          'once /wʌns/'
+        ]
+      },
+    ],
+    'audios': [
+      {'name': 'Unique','path': 'pronunciations/f2.mp3'},
+    ]
+  },
+  {
+    'id': 3,
+    'title': 'TH (ð) sound as in THE',
+    'content': [
+      {
+        'title': 'Initial TH (ð)',
+        'data': [
+          'the /ðə/',
+          'that /ðæt/',
+          'this /ðɪs/',
+          'they /ðeɪ/',
+          'there /ðer/',
+          'then /ðen/',
+          'thus /ðʌs/',
+          'their /ðer/',
+          'these /ðiːz/',
+          'than /ðæn/',
+          'them /ðem/',
+          'those /ðoʊz/',
+          'therefore /ˈðerfɔːr/'
+        ],
+      },
+      {
+        'title': 'Medial TH (ð)',
+        'data': [
+          'other /ˈʌðər/',
+          'another /əˈnʌðər/',
+          'without /wɪˈðaʊt/',
+          'although /ɔːlˈðoʊ/',
+          'whether /ˈweðər/',
+          'otherwise /ˈʌðərwaɪz/',
+          'mother /ˈmʌðər/',
+          'together /təˈɡeðər/',
+          'either /ˈiːðər/',
+          'within /wɪˈðɪn/',
+          'rather /ˈræðər/',
+          'weather /ˈweðər/',
+          'grandmother /ˈɡrænmʌðər/',
+          'father /ˈfɑːðər/'
+        ]
+      },
+      {
+        'title': 'Final TH (ð)',
+        'data': [
+          'smooth /smuːð/'
+        ]
+      }
+    ],
+    'audios': [
+      {'name': 'Male','path': 'pronunciations/m3.mp3'},
+      {'name': 'Female','path': 'pronunciations/f3.mp3'},
+    ]
+  },
+];
