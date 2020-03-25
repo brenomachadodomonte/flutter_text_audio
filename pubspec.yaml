@@ -118,6 +118,11 @@ flutter:
     - assets/pronunciations/f2.mp3
     - assets/pronunciations/m3.mp3
     - assets/pronunciations/f3.mp3
+    - assets/pronunciations/f4.mp3
+    - assets/pronunciations/m4.mp3
+    - assets/pronunciations/f5.mp3
+    - assets/pronunciations/f6.mp3
+    - assets/pronunciations/m6.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
