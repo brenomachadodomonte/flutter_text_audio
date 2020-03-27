@@ -17,7 +17,7 @@ class TextsAudios extends StatelessWidget {
   }
 
   Widget _getTile(Map audio, BuildContext context){
-    return InkWell(
+    return ListTile(
       onTap: (){
         Navigator.push(
             context,
@@ -25,11 +25,9 @@ class TextsAudios extends StatelessWidget {
               builder: (context) => Audio(audio: audio),
             ));
       },
-      child: ListTile(
-        title: Text(audio['title']),
-        subtitle: Text(audio['subtitle']),
-        trailing: Icon(Icons.arrow_forward_ios),
-      ),
+      title: Text(audio['title']),
+      subtitle: Text(audio['subtitle']),
+      trailing: Icon(Icons.arrow_forward_ios),
     );
   }
 }

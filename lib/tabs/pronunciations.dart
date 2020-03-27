@@ -16,7 +16,7 @@ class Pronunciations extends StatelessWidget {
   }
 
   Widget _getTile(Map pronunciation, BuildContext context){
-    return InkWell(
+    return ListTile(
       onTap: (){
         Navigator.push(
             context,
@@ -24,10 +24,8 @@ class Pronunciations extends StatelessWidget {
               builder: (context) => Pronunciation(pronunciation: pronunciation),
             ));
       },
-      child: ListTile(
-        title: Text(pronunciation['title']),
-        trailing: Icon(Icons.arrow_forward_ios),
-      ),
+      title: Text(pronunciation['title']),
+      trailing: Icon(Icons.arrow_forward_ios),
     );
   }
 }
