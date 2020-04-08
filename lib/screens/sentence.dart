@@ -149,7 +149,7 @@ class _SentenceState extends State<Sentence> with TickerProviderStateMixin {
                           Text(widget.sentence['sentence'], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),textAlign: TextAlign.center,),
                           Text(widget.sentence['pronunciation'], style: TextStyle(fontSize: 16),textAlign: TextAlign.center,),
                           Divider(),
-                          Text(widget.sentence['meaning'])
+                          Text(widget.sentence['meaning'], textAlign: TextAlign.center,)
                         ],
                       ),
                     ),
