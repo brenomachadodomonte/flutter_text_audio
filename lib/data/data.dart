@@ -220,121 +220,162 @@ List dataSentences = [
     'id': 1,
     'sentence': 'He was detained | by the US customs.',
     'pronunciation': '/hi wəz dɪˈteɪnd | baɪ ðə juː es ˈkʌstəmz/',
+    'meaning':'Ele foi detido pela alfândega norte-americana.',
     'audio': 'sentences/isp-01.mp3'
   },
   {
     'id': 2,
     'sentence': 'Which of them | is your brother?',
     'pronunciation': '/wɪtʃ əv ðəm | ɪz jʊr ˈbrʌðər/',
+    'meaning':'Qual deles é seu irmão?',
     'audio': 'sentences/isp-02.mp3'
   },
   {
     'id': 3,
     'sentence': 'You have to think for yourself.',
     'pronunciation': '/juː hæf tə θɪŋk fər jʊrˈself/',
+    'meaning':'Você tem que pensar por conta própria.',
     'audio': 'sentences/isp-03.mp3'
   },
   {
     'id': 4,
     'sentence': 'Did you know | that he was lying?',
     'pronunciation': '/dɪd juː noʊ | ðæt hiː wəz ˈlaɪɪŋ/',
+    'meaning':'Você sabia que ele estava mentindo?',
     'audio': 'sentences/isp-04.mp3'
   },
   {
     'id': 5,
     'sentence': 'How to deal with people | who try to manipulate you?',
     'pronunciation': '/haʊ tuː diːl wɪθ ˈpiːpl | huː traɪ tə məˈnɪpjuleɪt juː/',
+    'meaning':'Como lidar com pessoas que tentam manipular você?',
     'audio': 'sentences/isp-05.mp3'
   },
   {
     'id': 6,
     'sentence': 'So that | you can use it again.',
     'pronunciation': '/soʊ ðæt | ju ken juːz ɪt əˈɡen/',
+    'meaning':'De modo que você possa usar isso novamente.',
     'audio': 'sentences/isp-06.mp3'
   },
   {
     'id': 7,
     'sentence': 'You don’t have to pay | for anything.',
     'pronunciation': '/ju doʊn hæf tə peɪ | fər eniθɪŋ/',
+    'meaning':'Você não tem/precisa pagar por nada.',
     'audio': 'sentences/isp-07.mp3'
   },
   {
     'id': 8,
     'sentence': 'Take this | and meet us halfway.',
     'pronunciation': '/teɪk ðɪs | n miːt əs hæfˈweɪ/',
+    'meaning':'Pegue isso e nos encontre no meio do caminho.',
     'audio': 'sentences/isp-08.mp3'
   },
   {
     'id': 9,
     'sentence': 'A lot of people | like to run on the beach | barefoot.',
     'pronunciation': '/ə lɑːt əv piːpl | laɪk tu rʌn ɑn ðə biːtʃ | berfʊt/',
+    'meaning':'Muitas pessoas gostam de correr na praia descalças.',
     'audio': 'sentences/isp-09.mp3'
   },
   {
     'id': 10,
     'sentence': 'They knew | what they wanted.',
     'pronunciation': '/ðeɪ nuː | wɑːt ðeɪ ˈwɑːntɪd/',
+    'meaning':'Eles sabiam o que queriam.',
     'audio': 'sentences/isp-10.mp3'
   },
   {
     'id': 11,
     'sentence': 'The beach can only be reached by boat.',
     'pronunciation': '/ðə biːtʃ kæn oʊnli biː riːtʃt baɪ boʊt/',
+    'meaning':'A praia só pode ser alcançada de barco.',
     'audio': 'sentences/isp-11.mp3'
   },
   {
     'id': 12,
     'sentence': 'I could not keep the promise.',
     'pronunciation': '/aɪ kʊd nɑːt kiːp ðə prɑːmɪs/',
+    'meaning':'Eu não consegui manter (cumprir) a promessa.',
     'audio': 'sentences/isp-12.mp3'
   },
   {
     'id': 13,
     'sentence': 'They’re going to do | everything they can.',
     'pronunciation': '/ðer ɡoʊɪŋ tu du | evriθɪŋ ðeɪ kæn/',
+    'meaning':'Eles vão fazer tudo que eles podem/conseguem.',
     'audio': 'sentences/isp-13.mp3'
   },
   {
     'id': 14,
     'sentence': 'They’re not going to solve the problem.',
     'pronunciation': '/ðer nɑːt ɡoʊɪŋ tə sɑːlv ðə prɑːbləm/',
+    'meaning':'Eles não vão resolver o problema.',
     'audio': 'sentences/isp-14.mp3'
   },
   {
     'id': 15,
     'sentence': 'I don’t want to talk to you anymore.',
     'pronunciation': '/aɪ doʊn wɑːn tu tɔːk tu juː eniˈmɔːr/',
+    'meaning':'Eu não quero mais falar com você.',
     'audio': 'sentences/isp-15.mp3'
   },
   {
     'id': 16,
     'sentence': 'I don’t know | how this happened.',
     'pronunciation': '/aɪ doʊn noʊ | haʊ ðɪs hæpənd/',
+    'meaning':'Eu não sei como isso aconteceu.',
     'audio': 'sentences/isp-16.mp3'
   },
   {
     'id': 17,
     'sentence': 'Let me just finish | what I’m doing.',
     'pronunciation': '/let miː dʒʌst fɪnɪʃ | wɑt aɪm duːɪŋ/',
+    'meaning':'Só deixa eu terminar o que eu estou fazendo.',
     'audio': 'sentences/isp-17.mp3'
   },
   {
     'id': 18,
     'sentence': 'I’m sorry | I’ve forgotten your name. | Can you remind me?',
     'pronunciation': '/aɪm sɑːri | aɪv fərˈɡɑːtn jʊr neɪm. | ken juː rɪˈmaɪnd miː/',
+    'meaning':'Me desculpe, eu esqueci o seu nome. Você poderia me lembrar?',
     'audio': 'sentences/isp-18.mp3'
   },
   {
     'id': 19,
     'sentence': 'You didn’t notice that I got my hair cut.',
     'pronunciation': '/juː dɪdnt noʊtɪs ðæt aɪ ɡɑːt maɪ her kʌt/',
+    'meaning':'Você não notou que eu cortei o cabelo.',
     'audio': 'sentences/isp-19.mp3'
   },
   {
     'id': 20,
     'sentence': 'We could have done more.',
     'pronunciation': '/wi kʊdæv dʌn mɔːr/',
+    'meaning':'Nós poderíamos ter feito mais.',
     'audio': 'sentences/isp-20.mp3'
+  },
+  {
+    'id': 21,
+    'sentence': 'We\'ll have to pay a little more, | it\'s no big deal.',
+    'pronunciation': '/wiːl hæf tə peɪ ə lɪtl mɔːr | ɪts noʊ bɪɡ diːl/',
+    'meaning':'Nós teremos que pagar um pouco mais, não é nada demais.',
+    'audio': 'sentences/isp-21.mp3'
+  },
+  {
+    'id': 22,
+    'sentence': 'He was born | in a small village.',
+    'pronunciation': '/hiː wəz bɔːrn | ɪn ə smɔːl ˈvɪlɪdʒ/',
+    'meaning':'Ele nasceu em uma pequena aldeia.',
+    'audio': 'sentences/isp-22.mp3'
+  },
+  {
+    'id': 23,
+    'sentence': 'He opened the box, | and a mouse popped out.',
+    'pronunciation': '/hiː ˈoʊpənd ðə bɑːks | ænd ə maʊs pɑːpt aʊt/',
+    'meaning':'Ele abriu a caixa e um rato apareceu.',
+    'audio': 'sentences/isp-23.mp3'
   },
 ];
 
