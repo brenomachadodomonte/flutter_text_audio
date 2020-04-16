@@ -124,6 +124,12 @@ flutter:
     - assets/sentences/isp-21.mp3
     - assets/sentences/isp-22.mp3
     - assets/sentences/isp-23.mp3
+    - assets/sentences/isp-24.mp3
+    - assets/sentences/isp-25.mp3
+    - assets/sentences/isp-26.mp3
+    - assets/sentences/isp-27.mp3
+    - assets/sentences/isp-28.mp3
+    - assets/sentences/isp-29.mp3
     - assets/pronunciations/m1.mp3
     - assets/pronunciations/f1.mp3
     - assets/pronunciations/f2.mp3
@@ -134,6 +140,10 @@ flutter:
     - assets/pronunciations/f5.mp3
     - assets/pronunciations/f6.mp3
     - assets/pronunciations/m6.mp3
+    - assets/pronunciations/m7.mp3
+    - assets/pronunciations/f7.mp3
+    - assets/pronunciations/m8.mp3
+    - assets/pronunciations/f8.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -377,6 +377,48 @@ List dataSentences = [
     'meaning':'Ele abriu a caixa e um rato apareceu.',
     'audio': 'sentences/isp-23.mp3'
   },
+  {
+    'id': 24,
+    'sentence': 'He was trying to figure out | why the camera wasn’t working.',
+    'pronunciation': '/hi wʌz traɪɪŋ tu fɪɡjər aʊt | waɪ ðə kæmərə wʌznt wɜːrkɪŋ/',
+    'meaning':'Ele estava tentando descobrir por que a câmera não estava funcionando.',
+    'audio': 'sentences/isp-24.mp3'
+  },
+  {
+    'id': 25,
+    'sentence': 'Not everything worked out in the end | and we were disappointed.',
+    'pronunciation': '/nɑt evriθɪŋ wɜːrkt aʊt ɪn ði end | ænd wiː wɜːr dɪsəˈpɔɪntɪd/',
+    'meaning':'Nem tudo funcionou no final e nós ficamos desapontados.',
+    'audio': 'sentences/isp-25.mp3'
+  },
+  {
+    'id': 26,
+    'sentence': 'I find it amazing | that they\'re still together.',
+    'pronunciation': '/aɪ faɪnd ɪt əmeɪzɪŋ | ðæt ðer stɪl təɡeðər/',
+    'meaning':'Eu acho incrível que eles ainda estão juntos.',
+    'audio': 'sentences/isp-26.mp3'
+  },
+  {
+    'id': 27,
+    'sentence': 'Since you’re not interested, | I won’t tell you about it.',
+    'pronunciation': '/sɪns jər nɑːt ɪntrəstɪd | aɪ woʊnt tel juː əˈbaʊt ɪt/',
+    'meaning':'Uma vez que você não está interessado, eu não vou te contar sobre isso.',
+    'audio': 'sentences/isp-27.mp3'
+  },
+  {
+    'id': 28,
+    'sentence': 'He would have told me.',
+    'pronunciation': '/hiː wʊd hæv toʊld miː/',
+    'meaning':'Ele teria me contado.',
+    'audio': 'sentences/isp-28.mp3'
+  },
+  {
+    'id': 29,
+    'sentence': 'Eating too much sugar | can lead to health problems.',
+    'pronunciation': '/iːtɪŋ tuː mʌtʃ ʃʊɡər | kæn liːd tə helθ prɑːbləmz/',
+    'meaning':'Comer muito açúcar pode levar a problemas de saúde.',
+    'audio': 'sentences/isp-29.mp3'
+  },
 ];
 
 List dataPronunciations = [
@@ -724,6 +766,102 @@ List dataPronunciations = [
     'audios': [
       {'name': 'Female','path': 'pronunciations/f6.mp3'},
       {'name': 'Male','path': 'pronunciations/m6.mp3'},
+    ]
+  },
+
+  {
+    'id': 7,
+    'title': '/u/ and /ʊ/ sounds',
+    'content': [
+      {
+        'title': 'Words with the /u/ sound',
+        'data': [
+          'to /tuː/',
+          'you /juː/',
+          'do /duː/',
+          'use /juːz/',
+          'into /ˈɪntuː/ ',
+          'who /huː/ ',
+          'through /θruː/ ',
+          'new /nuː/ ',
+          'used /juːst/ ',
+          'two /tuː/',
+          'few /fjuː/',
+          'too /tuː/',
+          'computer /kəmˈpjuːtər/ ',
+          'usually /ˈjuːʒuəli/ ',
+          'human /ˈhjuːmən/ ',
+          'include /ɪnˈkluːd/',
+          'music /ˈmjuːzɪk/',
+          'food /fuːd/',
+          'value /ˈvæljuː/ ',
+          'including /ɪnˈkluːdɪŋ/',
+        ],
+      },
+      {
+        'title': 'Words using the /ʊ/ sound',
+        'data': [
+          'good /ɡʊd/',
+          'should /ʃʊd/',
+          'would /wʊd/',
+          'look /lʊk/',
+          'could /kʊd/',
+          'during /ˈdʊrɪŋ/',
+          'book /bʊk/',
+          'put /pʊt/',
+          'cook /kʊk/',
+          'full /fʊl/',
+          'wood /wʊd/',
+          'foot /fʊt/',
+          'woman /ˈwʊmən/',
+          'sugar /ˈʃʊɡər/',
+          'fully /ˈfʊli/',
+          'push /pʊʃ/',
+          'pull /pʊl/',
+          'hook /hʊk/',
+          'childhood /ˈtʃaɪldhʊd/',
+          'wooden /ˈwʊdn/',
+        ]
+      },
+    ],
+    'audios': [
+      {'name': 'Female','path': 'pronunciations/f7.mp3'},
+      {'name': 'Male','path': 'pronunciations/m7.mp3'},
+    ]
+  },
+  {
+    'id': 8,
+    'title': '/ɜːr/ sound as in FIRST',
+    'content': [
+      {
+        'title': 'Example words',
+        'data': [
+          'work /wɜːrk/',
+          'first /fɜːrst/',
+          'world /wɜːrld/',
+          'learn /lɜːrn/',
+          'person /ˈpɜːrsn/',
+          'early /ˈɜːrli/',
+          'certain /ˈsɜːrtn/',
+          'bird /bɜːrd/',
+          'word /wɜːrd/',
+          'personal /ˈpɜːrsənl/',
+          'current /ˈkɜːrənt/',
+          'research /rɪˈsɜːrtʃ/',
+          'service /ˈsɜːrvɪs/',
+          'term /tɜːrm/',
+          'turn /tɜːrn/',
+          'determine /dɪˈtɜːrmɪn/',
+          'alternative /ɔːlˈtɜːrnətɪv/',
+          'working /ˈwɜːrkɪŋ/',
+          'commercial /kəˈmɜːrʃl/',
+          'purchase /ˈpɜːrtʃəs/',
+        ],
+      },
+    ],
+    'audios': [
+      {'name': 'Female','path': 'pronunciations/f8.mp3'},
+      {'name': 'Male','path': 'pronunciations/m8.mp3'},
     ]
   },
 ];
